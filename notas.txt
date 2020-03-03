@@ -1,0 +1,30 @@
+Node tiene un repositorio de paquetes (encontrados en la documentacion en el sitio oficial de NodeJs) tan grande que 
+existe la posibilidad de que lo que se este necesitando hacere alguien mas ya lo realizo. Es muy comun y recomendable 
+declarar todos los requires al inicio del programa.
+
+Existen tres tipos de requires: 
+
+1. Las que son propias de Node y que solo hay que definirlas para poderlas usar
+2. Las express un paquete no propio de Node que funcionan similar a un required pero que no cuentan con una 
+documentacion.
+3. Los archivos creados por nosotros en el proyecto
+
+const fs = requieres('fs') --> Tipo 1
+const fs = requires('express') --> Tipo 2
+const fs = requieres('../fs') --> Tipo 3
+
+Por otro lado es recomendable que al crear alguna app, el archivo app.js quien es el principal o index en html contenga
+la menor informacion posible. En este ejemplo vemos como la logica de las operaciones se ubica en otro archivo JavaScipt
+independiente.
+
+El metodo 'process' es un objeto global que proporciona informacion y control acerca del estado actual de Node.js.
+Global significa que siempre estara disponible mintras se ejecuta la app y no requiere del metodo 'require' para su uso.
+'Process' tiene una propiedad llamada 'argv' que entre sus funciones permite el pasar argumentos a nuestra app a travez
+de la linea de comandos. 'argv' se representa en forma de matriz, los cuales los primeros dos indices contienen el path
+de Node.js como tal y un segundo la ruta de la app en cuestion, a partir del tercer indice se recibe la data que deseemos
+pasar.
+
+Simpre es necesario inicializar un proyecto Node. El comando npm init se encarga de ello, utiizando la consola.
+
+Yargs te ayuda a crear herramientas interactivas de línea de comandos, analizando argumentos y generando una elegante
+interfaz de usuario.
